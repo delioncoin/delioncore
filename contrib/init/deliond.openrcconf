@@ -1,0 +1,26 @@
+# /etc/conf.d/deliond: config file for /etc/init.d/deliond
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/delion/delion.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/deliond"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/deliond.pid"
+
+# Where to write deliond data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/deliond"
+
+# User and group to own deliond process
+#BITCOIND_USER="delion"
+#BITCOIND_GROUP="delion"
+
+# Path to deliond executable
+#BITCOIND_BIN="/usr/bin/deliond"
+
+# Nice value to run deliond under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
