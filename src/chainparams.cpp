@@ -54,13 +54,17 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 
 static Checkpoints::MapCheckpoints mapCheckpoints =
-    boost::assign::map_list_of(0, uint256("0xeaaaea7d13c08bff5ba2be83cb558de02a5f872af48a67a9802dd4bc95f0a399"));
+    boost::assign::map_list_of
+    (0, uint256("0xeaaaea7d13c08bff5ba2be83cb558de02a5f872af48a67a9802dd4bc95f0a399"))
+    (50000,uint256("06466ca82b589f87682a84be2055ab487a5b305b10b3ff89db70fed9b169b34c"))
+    (100000,uint256("870b056fde9975f0b8d81eb800dd7533b446095d26518acdadce098c65b5a964"))
+    (140000,uint256("ec916ebba4184b3936d081cff5a3fad56a80672c9f71c359c83d8f96ba97fc33"))
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1537607784, // * UNIX timestamp of last checkpoint block
-    2,    // * total number of transactions between genesis and last checkpoint
+    1557117733, // * UNIX timestamp of last checkpoint block
+    295778,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    2000       // * estimated number of transactions per day after checkpoint
+    5000       // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -153,7 +157,7 @@ public:
 		vFixedSeeds.clear();
 		vSeeds.clear();
 		
-		vSeeds.push_back(CDNSSeedData("1.delion.online", "1.delion.online"));
+        vSeeds.push_back(CDNSSeedData("1.delion.online", "1.delion.online"));
         vSeeds.push_back(CDNSSeedData("2.delion.online", "2.delion.online"));
         vSeeds.push_back(CDNSSeedData("3.delion.online", "3.delion.online"));
         vSeeds.push_back(CDNSSeedData("4.delion.online", "4.delion.online"));
