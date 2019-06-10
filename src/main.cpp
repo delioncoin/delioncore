@@ -2127,20 +2127,22 @@ int64_t GetBlockValue(int nHeight)
     int64_t nSubsidy = 0;
 	if (nHeight == 0) {
         nSubsidy = 15000000 * COIN;
-	} else if (nHeight < 57600) { // 40 hari pertama -> supply 15000000 + 115200 = 15.115.200
+	} else if (nHeight < 57600) {
         nSubsidy = 0.1 * COIN;
-    } else if (nHeight < 374400 && nHeight >= 57600) { // 220 hari -> reward: 31.680
+    } else if (nHeight < 229000 && nHeight >= 57600) {
         nSubsidy = 100 * COIN;
-	} else if (nHeight < 892800 && nHeight >= 374400) { // 360 hari -> reward: 38.880.000
+	} else if (nHeight < 272200 && nHeight >= 229000) { // 30 days
         nSubsidy = 75 * COIN;
-	} else if (nHeight < 1152000 && nHeight >= 892800) { // 180 hari -> reward: 12.960.000
+	} else if (nHeight < 315400 && nHeight >= 272200) { // 30 days
         nSubsidy = 50 * COIN;
-	} else if (nHeight < 1670400 && nHeight >= 1152000) { // 360 hari -> 38.880.000
-        nSubsidy = 75 * COIN;
-	} else if (nHeight < 2707200 && nHeight >= 1670400) { // 720 hari -> 51.840.000
-        nSubsidy = 50 * COIN;
-	} else if (nHeight >= 2707200) {
+	} else if (nHeight < 401800 && nHeight >= 315400) { // 60 days
         nSubsidy = 25 * COIN;
+	} else if (nHeight < 531400 && nHeight >= 401800) { // 90 days
+        nSubsidy = 12 * COIN;
+	} else if (nHeight < 661000 && nHeight >= 531400) { // 90 days
+        nSubsidy = 6 * COIN;
+    } else if (nHeight >= 661000) {
+        nSubsidy = 3 * COIN;
 	} else {
         nSubsidy = 0.1 * COIN;
     }
