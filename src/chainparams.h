@@ -98,6 +98,11 @@ public:
     int64_t Budget_Fee_Confirmations() const { return nBudget_Fee_Confirmations; }
     CBaseChainParams::Network NetworkID() const { return networkID; }
 
+    /** Spork key and Masternode Handling **/
+    std::string SporkKeyOld() const { return strSporkKeyOld; }
+    int64_t NewSporkStart() const { return nEnforceNewSporkKey; }
+    int64_t RejectOldSporkKey() const { return nRejectOldSporkKey; }
+
     /** Zerocoin **/
     std::string Zerocoin_Modulus() const { return zerocoinModulus; }
     libzerocoin::ZerocoinParams* Zerocoin_Params() const;
@@ -159,6 +164,9 @@ protected:
     bool fHeadersFirstSyncingActive;
     int nPoolMaxTransactions;
     std::string strSporkKey;
+    std::string strSporkKeyOld;
+    int64_t nEnforceNewSporkKey;
+    int64_t nRejectOldSporkKey;
     std::string strObfuscationPoolDummyAddress;
     int64_t nStartMasternodePayments;
     std::string zerocoinModulus;

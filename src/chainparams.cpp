@@ -122,7 +122,7 @@ public:
         nTargetSpacing = 1 * 60;  // Delion: 60 Seconds
         nMaturity = 20;
         nMasternodeCountDrift = 20;
-        nMaxMoneyOut = 1000000000 * COIN;
+        nMaxMoneyOut = 100000000 * COIN;
 
         /** Height or Time Based Activations **/
         nLastPOWBlock = 600;
@@ -134,6 +134,9 @@ public:
         nBlockRecalculateAccumulators = ~1; //Trigger a recalculation of accumulators
         nBlockFirstFraudulent = ~1; //First block that bad serials emerged
         nBlockLastGoodCheckpoint = ~1; //Last valid accumulator checkpoint
+
+        nEnforceNewSporkKey = 1564056000; //!> Sporks signed after (GMT): Thursday, July 25, 2019 12:00:00 PM GMT must use the new spork key
+        nRejectOldSporkKey = 1564315200; //!> Fully reject old spork key after (GMT): Monday, July 29, 2019 12:00:00 PM
 
         const char* pszTimestamp = "Delion Project Started";
         CMutableTransaction txNew;
@@ -189,7 +192,8 @@ public:
         fHeadersFirstSyncingActive = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "0484698d3ba6ba6e7423fa5cbd6a89e0a9a5348f88d332b44a5cb1a8b7ed2c1eaa335fc8dc4f012cb8241cc0bdafd6ca70c5f5448916e4e6f511bcd746ed57dc50";
+        strSporkKey = "04b2fe44535740084d1df6b93fb044000ba018f1c35ec5196c4d918498e108bd436389225d9a83db72bbe473d6ba373fabf8fc68038ff87463e97cee8caaccb28e";
+        strSporkKeyOld = "0484698d3ba6ba6e7423fa5cbd6a89e0a9a5348f88d332b44a5cb1a8b7ed2c1eaa335fc8dc4f012cb8241cc0bdafd6ca70c5f5448916e4e6f511bcd746ed57dc50";
         strObfuscationPoolDummyAddress  = "D87q2gC9j6nNrnzCsg4aY6bHMLsT9nUhEw";
         nStartMasternodePayments = 1403728576; //Wed, 25 Jun 2014 20:36:16 GMT
         
