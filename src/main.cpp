@@ -2149,17 +2149,38 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 6 * COIN;
 	} else if (nHeight < 369360 && nHeight >= 347761) {
         nSubsidy = 3 * COIN;
-    } else if (nHeight < 801360 && nHeight >= 369361) {
-        nSubsidy = 2 * COIN;
-    } else if (nHeight >= 801361) {
-        nSubsidy = 1 * COIN;
+    } else if (nHeight >= 369361 && nHeight <= 455760) {
+        nSubsidy = 20 * COIN;
+    } else if (nHeight >= 455761 && nHeight <= 542160) {
+        nSubsidy = 40 * COIN;
+    } else if (nHeight >= 542161 && nHeight <= 585360) {
+        nSubsidy = 50 * COIN;
+    } else if (nHeight >= 585361 && nHeight <= 628560) {
+        nSubsidy = 60 * COIN;
+    } else if (nHeight >= 628561 && nHeight <= 714960) {
+        nSubsidy = 55 * COIN;
+    } else if (nHeight >= 714961 && nHeight <= 844560) {
+        nSubsidy = 50 * COIN;
+    } else if (nHeight >= 844561 && nHeight <= 1017360) {
+        nSubsidy = 45 * COIN;
+    } else if (nHeight >= 1017361 && nHeight <= 1233360) {
+        nSubsidy = 40 * COIN;
+    } else if (nHeight >= 1233361 && nHeight <= 1492560) {
+        nSubsidy = 35 * COIN;
+    } else if (nHeight >= 1492561 && nHeight <= 2010960) {
+        nSubsidy = 30 * COIN;
+    } else if (nHeight >= 2010961) {
+        nSubsidy = 25 * COIN;
     } else {
-		int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
+		/*
+        int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
 		if (nMoneySupply >= Params().MaxMoneyOut()) {
 			nSubsidy = 0 * COIN;
 		} else {
 			nSubsidy = 1 * COIN;
 		}
+        */
+       nSubsidy = 1 * COIN;
     }
 
     return nSubsidy;
