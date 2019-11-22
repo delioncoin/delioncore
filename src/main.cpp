@@ -2150,8 +2150,10 @@ int64_t GetBlockValue(int nHeight)
 	} else if (nHeight < 369360 && nHeight >= 347761) {
         nSubsidy = 3 * COIN;
     } else if (nHeight >= 369361 && nHeight <= 455760) {
+        nSubsidy = 2 * COIN;
+    } else if (nHeight >= 455761 && nHeight <= 498960) {
         nSubsidy = 20 * COIN;
-    } else if (nHeight >= 455761 && nHeight <= 542160) {
+    } else if (nHeight >= 498961 && nHeight <= 542160) {
         nSubsidy = 40 * COIN;
     } else if (nHeight >= 542161 && nHeight <= 585360) {
         nSubsidy = 50 * COIN;
@@ -6336,7 +6338,7 @@ int ActiveProtocol()
 
     if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
             return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
-    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+        return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
 }
 
 // requires LOCK(cs_vRecvMsg)
