@@ -2173,6 +2173,8 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 30 * COIN;
     } else if (nHeight >= 2010961) {
         nSubsidy = 25 * COIN;
+    } else if (nHeight >= 2218000) {
+        nSubsidy = 0.1 * COIN;
     } else {
 		/*
         int64_t nMoneySupply = chainActive.Tip()->nMoneySupply;
@@ -2182,7 +2184,7 @@ int64_t GetBlockValue(int nHeight)
 			nSubsidy = 1 * COIN;
 		}
         */
-       nSubsidy = 1 * COIN;
+       nSubsidy = 0.1 * COIN;
     }
 
     return nSubsidy;
